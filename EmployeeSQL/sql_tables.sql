@@ -4,6 +4,12 @@ create table departments (
 	primary key(dept_no)
 );
 
+create table titles (
+	title_id varchar(20) not null,
+	title varchar(50) not null,
+	primary key (title_id)
+);
+
 create table employees (
 	emp_no int not null,
 	emp_title_id varchar(20) not null,
@@ -35,11 +41,6 @@ create table salaries (
 	foreign key (emp_no) references employees (emp_no)
 );
 
-create table titles (
-	title_id varchar(20) not null,
-	title varchar(50) not null,
-	primary key (title_id)
-);
 
 ALTER TABLE employees
 ADD CONSTRAINT fk_title
